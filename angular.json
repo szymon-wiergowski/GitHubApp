@@ -94,7 +94,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/bootbox/bootbox.js",
+              "js/jquery.filedrop.js"
+          ]
           }
         },
         "lint": {
@@ -123,6 +128,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "GitHubApp"
+    }
+  },
+  "defaultProject": "GitHubApp",
+  "cli": {
+    "analytics": "d8042727-83ef-481d-b3cc-5e183384c784"
+  }
 }

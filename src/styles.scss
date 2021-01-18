@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+// import bootstrap
+@import "~bootstrap/scss/bootstrap.scss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+$primary-color: rgb(232, 235, 222);
+
+html{
+  background-color: $primary-color;
+}
+.content-page{
+  background-color: $primary-color;
+}
+
+.badge{
+  margin-right: 0.25rem;
+}
+
