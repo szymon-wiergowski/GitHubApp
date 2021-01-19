@@ -4,6 +4,7 @@ export const Users: User[] = [
   {
   id: 1,
   avatar_url: 'https://github.com/images/error/octocat_happy.gif',
+  url: 'https://api.github.com/octocat',
   type: 'User',
   name: 'monalisa octocat',
   company: 'GitHub',
@@ -19,7 +20,8 @@ export const Users: User[] = [
   },
   {
     id: 2,
-    avatar_url: 'https://github.com/images/error/octocat_happy.gif',
+    avatar_url: '../assets/img/Profile-picture.jpg',
+    url: 'https://github.com/szymon-wiergowski',
     type: 'User',
     name: 'Szymon Wiergowski',
     company: 'AdvanFile',
@@ -36,6 +38,7 @@ export const Users: User[] = [
     {
       id: 3,
       avatar_url: 'https://github.com/images/error/octocat_happy.gif',
+      url: 'https://api.github.com/lukasz-smolnicki',
       type: 'User',
       name: 'Łukasz Smolnicki',
       company: 'SpawaczUE',

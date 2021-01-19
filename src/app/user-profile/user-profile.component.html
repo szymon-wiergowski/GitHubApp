@@ -1,26 +1,26 @@
 <div class="card my-3">
   <div class="card-header">
-    Szymon Wiergowski
+    {{ selectedUser.name }}
   </div>
   <div class="card-body">
     <div class="row">
       <div class="col d-flex flex-column">
-        <img  src="../assets/img/Profile-picture.jpg" class="img-fluid border rounded-circle mb-2">
-        <button href="#" type="submit" class="btn btn-warning btn-sm btn-block mb-3">Profile</button>
+        <img  src="{{ selectedUser.avatar_url }}" class="img-fluid border rounded-circle mb-2">
+        <a href="{{ selectedUser.url }}" type="button" class="btn btn-warning btn-sm btn-block mb-3">Profile</a>
       </div>
       <div class="col-md-10">
         <div class="d-block col-md-12 mb-3">
-          <span class="badge bg-dark repo-badge">Public Repos: 43</span>
-          <span class="badge bg-danger repo-badge">Public Gists: 0</span>
-          <span class="badge bg-success repo-badge">Followers: 380</span>
-          <span class="badge bg-primary repo-badge">Following: 0</span>
+          <span class="badge bg-dark repo-badge">Public Repos: {{ selectedUser.public_repos }}</span>
+          <span class="badge bg-danger repo-badge">Public Gists: {{ selectedUser.public_gists }}</span>
+          <span class="badge bg-success repo-badge">Followers: {{ selectedUser.followers }}</span>
+          <span class="badge bg-primary repo-badge">Following: {{ selectedUser.following }}</span>
         </div>
         <div class="d-block col-md-12">
           <ul class="list-group">
-            <li class="list-group-item">Company: AdvanFile</li>
-            <li class="list-group-item">Website/Blog: szymon-kodzi.com</li>
-            <li class="list-group-item">Location: Reda</li>
-            <li class="list-group-item">Member Since: 2019-09-24</li>
+            <li class="list-group-item">Company: {{ selectedUser.company }}</li>
+            <li class="list-group-item">Website/Blog: {{ selectedUser.blog }}</li>
+            <li class="list-group-item">Location: {{ selectedUser.location }}</li>
+            <li class="list-group-item">Member Since: {{ selectedUser.created_at | date }}</li>
           </ul>
         </div>
       </div>
