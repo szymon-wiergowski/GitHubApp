@@ -1,3 +1,5 @@
+import { User } from './../../model/models';
+import { AppStateService } from './../app-state.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private state: AppStateService) { }
+  public user: User;
+  public users: User[];
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers(): void {
+    this.users = this.state.getUsers();
+    console.log(this.users);
   }
 
 }
