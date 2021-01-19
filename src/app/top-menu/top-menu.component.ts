@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-top-menu',
@@ -8,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TopMenuComponent implements OnInit {
 
   constructor() { }
+  @Input() appTitle: string;
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -1,7 +1,7 @@
-<app-top-menu></app-top-menu>
+<app-top-menu [appTitle]="title"></app-top-menu>
 
 <div class="container-fluid content-page px-5 py-4">
   <app-user-search></app-user-search>
-  <app-user-profile></app-user-profile>
-  <app-repositories></app-repositories>
+  <app-user-profile [user]="selectedUser"></app-user-profile>
+  <app-repositories [user]="selectedUser" [repositories]="userRepositories"></app-repositories>
 </div>

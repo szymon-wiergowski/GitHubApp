@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Repository, User } from './../../model/models';
 
 @Component({
   selector: 'app-repositories',
@@ -8,8 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class RepositoriesComponent implements OnInit {
 
   constructor() { }
+  @Input() repositories: Repository[];
+  @Input() user: User;
 
   ngOnInit(): void {
   }
-
 }

@@ -1,42 +1,32 @@
-<h5 class="mt-4">Lasted Repos</h5>
-<hr>
-
-<div class="card mt-3">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-lg-8">
-        <h5>Todo app:</h5>
-        <p>Todo application. After registration, the user can add a task, mark that it is done, delete, and modify. (used: React.js, React-Router, Redux, hooks, firebase).    </p>
-      </div>
-      <div class="col-lg d-flex justify-content-between">
-        <div class="col-7 d-inline">
-          <span class="badge bg-dark repo-badge">Forks: 2</span>
-          <span class="badge bg-danger repo-badge">Watchers: 9</span>
-          <span class="badge bg-success repo-badge">Stars: 8</span>
-        </div>
-        <div class="col d-flex align-items-end flex-column">
-          <button href="#" type="submit" class="btn btn-warning btn-sm btn-block">Repo page</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div *ngIf="repositories.length > 0; else noRepo">
+  <h5 class="mt-4">Lasted Repos</h5>
+  <hr>
 </div>
+<ng-template #noRepo>
+  <div class="alert alert-info" role="alert">
+    {{ user.name }} has no repositories.
+  </div>
+</ng-template>
 
-<div class="card mt-3">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-lg-8">
-        <h5>DRINK APP:</h5>
-        <p>The 4-person team project was created in Infoshare Academy. Application helps prepare a drink for the user from the products he has. The user can add new drinks and register on the firebase platform, as well as find the location of the selected store on google map (used: React.js, firebase, google map).</p>
-      </div>
-      <div class="col-lg d-flex justify-content-between">
-        <div class="col-7 d-inline">
-          <span class="badge bg-dark repo-badge">Forks: 2</span>
-          <span class="badge bg-danger repo-badge">Watchers: 9</span>
-          <span class="badge bg-success repo-badge">Stars: 8</span>
-        </div>
-        <div class="col d-flex align-items-end flex-column">
-          <button href="#" type="submit" class="btn btn-warning btn-sm btn-block">Repo page</button>
+<div *ngFor="let repo of repositories">
+  <div *ngIf="repositories">
+    <div class="card mt-3">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-8">
+            <h5>{{ repo.name }}:</h5>
+            <p>{{ repo.description }}</p>
+          </div>
+          <div class="col-lg d-flex justify-content-between">
+            <div class="col-7 d-inline">
+              <span class="badge bg-dark repo-badge">Forks: {{ repo.forks }}</span>
+              <span class="badge bg-danger repo-badge">Watchers: {{ repo.watchers }}</span>
+              <span class="badge bg-success repo-badge">Stars: {{ repo.stargazers_count }}</span>
+            </div>
+            <div class="col d-flex align-items-end flex-column">
+              <a href="{{ repo.url }}" type="button" class="btn btn-warning btn-sm btn-block">Repo page</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
